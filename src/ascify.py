@@ -26,13 +26,13 @@ def main():
     args = parser.parse_args()
 
     concurrent = args.concurrent
-    grid = AsciiGrid(args.input, concurrent=concurrent)
+    grid = AsciiGrid(args.input, step=3, size=(250, 400), concurrent=concurrent)
     grid.start()
     if args.output is None:
         print(grid.ascii_grid)
     else:
         with open(args.output, "w") as f:
-            f.write(grid.ascii_grad)
+            f.write(grid.ascii_grid)
 
 if __name__ == "__main__":
     main()

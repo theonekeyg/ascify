@@ -37,6 +37,7 @@ class AsciiGrid:
 
     def start(self):
         if self.concurrent:
+            self.y += 1
             for th in self.threads:
                 th.start()
                 th.join()
