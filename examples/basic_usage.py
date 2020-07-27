@@ -2,7 +2,7 @@
 from ascify.grid import AsciiGrid
 
 def main():
-    grid = AsciiGrid("leader.jpg", step=3, size=(250, 400))
+    grid = AsciiGrid("leader.jpg", step=5, size=(70, 120))
     grid.start()
     print(grid)
 

@@ -1,4 +1,4 @@
-ascii_tokens = {
+default_tokens = {
     "@": 200,
     "#": 155,
     "&": 100,
@@ -6,12 +6,12 @@ ascii_tokens = {
     ".": 0
 }
 
-def default_rendition(img_slice):
+def default_rendition(img_slice, ascii_tokens):
     for char, threshold in ascii_tokens.items():
         if (img_slice.mean() >= threshold):
             return char
 
-def colorwise_rendition(img_slice):
+def colorwise_rendition(img_slice, ascii_tokens):
     for char, threshold in ascii_tokens.items():
         if (img_slice.max() >= threshold):
             return char
