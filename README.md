@@ -1,6 +1,6 @@
 ## Summary
 
-This is a lightweight utility for transforming images to grid of ascii tokens.
+This is a lightweight library for turning images to grid of ascii tokens.
 Example:
 ![](_assets/cmp.png "Comparison of image after truecolor ascifying")
 
