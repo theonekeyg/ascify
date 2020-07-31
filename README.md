@@ -1,16 +1,20 @@
 ## Summary
 
 This is a lightweight library for turning images to grid of ascii tokens.
-Example:
+Visual example:
 ![](_assets/cmp.png "Comparison of image after truecolor ascifying")
 
 ## Installation 
 
 The simplest and recommended way to install this package is to use:
+
 `pip install ascify`
 
 To install from source, do:
-`git clone https://github.com/theonekeyg/ascify.git && pip install .`
+```
+git clone https://github.com/theonekeyg/ascify.git && cd ascify
+pip install .
+```
 
 ## Usage
 
@@ -28,6 +32,8 @@ print(grid)
 Ascify framework is highly configurable, you can change output grid size,
 size of the moving window through the original image, output ascii tokens and
 logic behind choosing tokens for particular window (which i call renditions).
+All renditions take numpy.array of size (step, step, 3) as their first parameter,
+which represents the moving window at certain position on the image.
 Examples of implemented renditions can be found in `./ascify/renditions.py`
 file. For instance, default rendition looks the following:
 ```python
@@ -37,7 +43,7 @@ def default_rendition(img_slice, ascii_tokens):
             return char
 ```
 
-Besides of configuring rendition itself, you can configure used ascii tokens
+Besides of configuring rendition itself, you can configure ascii tokens, used
 for the output ascii grid. The tokens are passed directly to the rendition and
 don't participate in any other part of ascify, so the format of ascii tokens
 depends only on the logic of corresponding rendition used with it.
