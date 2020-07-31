@@ -6,9 +6,11 @@ Visual example:
 
 ## Installation 
 
-The simplest and recommended way to install this package is to use:
-
-`pip install ascify`
+The simplest and recommended way to install this package is to install
+it with PyPI:
+```
+pip install ascify
+```
 
 To install from source, do:
 ```
