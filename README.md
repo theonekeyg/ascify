@@ -6,10 +6,15 @@ Example:
 
 ## Installation 
 
-### TODO
+The simplest and recommended way to install this package is to use:
+`pip install ascify`
+
+To install from source, do:
+`git clone https://github.com/theonekeyg/ascify.git && pip install .`
 
 ## Usage
 
+### Basic usage
 The simplest usage, with only default parameters would look like this:
 ```python
 from ascify.grid import AsciiGrid
@@ -39,8 +44,8 @@ depends only on the logic of corresponding rendition used with it.
 
 However, if you use one of the default renditions, the expected tokens format
 is object with implemented `__getitem__` method, keys to which represens tokens
-themselves, and values represent threshold values. The default tokens look the
-following: 
+themselves, and values represent threshold values. The default token dictonary
+looks the following:
 
 ```python
 default_tokens = {
