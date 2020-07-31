@@ -15,21 +15,17 @@ class ResizeOptions:
     HAMMING  = Image.HAMMING  # 0x05
 
 class AsciiGrid:
-    def __init__(self, impath, step=3, size=(60, 130), rendition=None, ascii_tokens=None,
-                 resample=Image.BILINEAR):
+    def __init__(self, impath, step=3, size=(60, 130), rendition=default_rendition,
+                 ascii_tokens=default_tokens, resample=ResizeOptions.BILINEAR):
         if len(size) != 2:
             raise ValueError("provided size got invalid format, expected length "
                              f"= 2, but received: {len(size)}")
         if not os.path.exists(impath):
             raise FileNotFoundError(f"File by provided path '{impath}' "
                                      "wasn't found")
-        if rendition is None:
-            self.rendition = default_rendition
-        else: self.rendition = rendition
 
-        if ascii_tokens is None:
-            self.tokens = default_tokens
-        else: self.tokens = ascii_tokens
+        self.rendition  = rendition
+        self.tokens     = ascii_tokens
 
         self.y, self.x  = size
         size            = list(map(lambda x: x*step, size))

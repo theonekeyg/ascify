@@ -15,7 +15,7 @@ def default_rendition(img_slice, ascii_tokens):
 def truecolor_default(img_slice, ascii_tokens):
     char = default_rendition(img_slice, ascii_tokens)
     char = truecolor_proc(*img_slice.mean(axis=(1, 0)), char)
-    return char + "\x1B[0m"
+    return char
 
 def colorwise_rendition(img_slice, ascii_tokens):
     for char, threshold in ascii_tokens.items():
