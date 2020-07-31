@@ -15,7 +15,7 @@ class ResizeOptions:
     HAMMING  = Image.HAMMING  # 0x05
 
 class AsciiGrid:
-    def __init__(self, impath, step=5, size=(60, 130), rendition=None, ascii_tokens=None,
+    def __init__(self, impath, step=3, size=(60, 130), rendition=None, ascii_tokens=None,
                  resample=Image.BILINEAR):
         if len(size) != 2:
             raise ValueError("provided size got invalid format, expected length "
