@@ -44,6 +44,10 @@ class AsciiGrid:
         for j in range(self.x):
             img_slice = self.img[i*self.step:(i+1)*self.step,
                                  j*self.step:(j+1)*self.step]
+
+            # In case the image is RBGA, remove the alpha channel
+            if img_slice.shape[-1] == 4:
+                img_slice = img_slice[:,:,:3]
             rv += self.rendition(img_slice, self.tokens)
         return (rv+"\n")
 
